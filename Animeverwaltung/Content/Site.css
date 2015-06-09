@@ -1,0 +1,31 @@
+﻿body {
+}
+
+#startseiteDiv {
+    text-align:center;
+}
+
+.button{
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  background-color: darkred;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+body h1{
+    background-color:maroon;
+    color: whitesmoke;
+}
+
+.deleteButton{
+    height:35px;
+}
+.detailsButton{
+    height:35px;
+}
+/*Animes*/
+.animeListeDiv{
+    border: 1px black solid;
+}

@@ -1,0 +1,30 @@
+﻿@model Animeverwaltung.Models.AnimeErfassenModel
+
+<div>
+    @if (Model.einAnime == null)
+    {
+        <h2>Anime neu erfassen</h2>
+    }
+    else
+    {
+        <h2>Anime @Model.einAnime.Bezeichnung bearbeiten</h2>
+    }
+    <div>
+        @using (Html.BeginForm("Editieren", "Anime"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+            <div>
+                <label>Bezeichnung: </label>
+                @Html.HiddenFor(a => a.einAnime.Id)
+                @Html.TextBoxFor(model => model.einAnime.Bezeichnung)
+            </div>
+            <div>
+                <label>Kategorie: </label>
+                @*@Html.DropDownListFor(model => model.eineAnime.Kategorie, new SelectList(Model.alleKategorien, "Id", "Bezeichnung", Model.eineAnime.KategorieId))*@   
+                @Html.DropDownList("AnimeKategorieId", "--Bitte wählen--")
+            </div>
+            <input type="submit" value="Speichern" />
+        }
+    </div>
+</div>

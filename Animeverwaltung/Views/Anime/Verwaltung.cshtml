@@ -1,0 +1,23 @@
+﻿@model List<Animeverwaltung.DataAccess.Anime>
+<div class="animeListeDiv">
+    <h2>Animes</h2>
+    <label>Hier werden alle Animes gelistet welche gerade aktuell sind.</label>
+    <a href="@Url.Action("Editieren", "Anime")">Neu erfassen</a>
+    @foreach (Animeverwaltung.DataAccess.Anime anime in Model)
+    {
+        <div class="animeObjektDiv">
+            <h3>@anime.Bezeichnung</h3>
+            <div>
+                <a href="@Url.Action("Editieren", "Anime", new { Id = anime.Id }, null)"><img class="detailsButton" src="/Content/Lupe.png" /></a>
+                <a href="@Url.Action("LoescheAnime", "Anime", new { Id = anime.Id }, null)"><img class="deleteButton" src="/Content/Trashcan.png" /></a>
+            </div>
+        </div>
+    }
+    @*<div class="animeObjektDiv">
+        <h3>Naruto</h3>
+        <div>
+            <a href="#" title="Löschen"><img class="detailsButton" src="/Content/Lupe.png" /></a>
+            <a href="#" title="Detailsansicht"><img class="deleteButton" src="/Content/Trashcan.png" /></a>
+        </div>
+    </div>*@
+</div>
